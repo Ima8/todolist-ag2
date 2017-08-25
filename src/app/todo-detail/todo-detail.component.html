@@ -1,0 +1,6 @@
+<div *ngIf="todo">
+    <div>
+        <label>{{todo.task}}</label>
+        <button (click)="doneTask(todo)" type="text">{{todo.status}}</button>
+    </div>
+</div>
