@@ -1,6 +1,8 @@
-<div *ngIf="todo">
-    <div>
-        <label>{{todo.task}}</label>
-        <button (click)="doneTask(todo)" type="text">{{todo.status}}</button>
-    </div>
+<div *ngIf="todos">
+    <li *ngFor="let t of todos">
+        <div>
+            <label>{{t.task}}</label>
+            <button (click)="deleteTask(t)" type="text">{{t.status}}</button>
+        </div>
+    </li>
 </div>

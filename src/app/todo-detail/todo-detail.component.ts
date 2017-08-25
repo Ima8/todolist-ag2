@@ -1,3 +1,4 @@
+import { TODOS } from './../todos';
 import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from '../todo';
 
@@ -8,6 +9,7 @@ import { Todo } from '../todo';
 })
 export class TodoDetailComponent implements OnInit {
   @Input() todo: Todo;
+  @Input() todos;
 
   constructor() { }
 
@@ -19,7 +21,10 @@ export class TodoDetailComponent implements OnInit {
     } else {
       todo.status = 'Done';
     }
-
-
+  }
+  deleteTask(todo: Todo) {
+    this.todos = this.todos.filter((t) => {
+      return t.id !== todo.id;
+    });
   }
 }
